@@ -1,0 +1,3 @@
+h1. Coloured Balls
+
+This is an example exercise in visual programming for the London Clojure dojo.
