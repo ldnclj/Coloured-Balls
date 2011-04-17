@@ -4,5 +4,7 @@ This is an example exercise in visual programming for the London Clojure dojo.
 
 h2. Running the code
 
-* lein|cake deps
-* lein|cake run src/coloured_balls/core.clj
+* lein or cake deps
+* To run code
+** cake run src/coloured_balls/core.clj
+** lein run
