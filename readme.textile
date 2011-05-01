@@ -8,3 +8,64 @@ h2. Running the code
 * To run code
 ** cake run src/coloured_balls/core.clj
 ** lein run
+
+h2. Initial state of the code
+
+This code uses the Processing library to perform a simple animation loop in a Processing applet. Essentially it will just create a new random ball and draw it on screen, creating a kind of spot painting.
+
+h3. Bugs
+
+* I seem to have defined the Leiningen main class incorrectly as it will be run even if you are running a test command.
+
+h2. Suggestions for the dojo
+
+The goal of this dojo is to just come up with something visually interesting and to try and see how the Processing bindings can be used to visualise Clojure data structures.
+
+h3. Visual changes
+
+* A simple change would be to not regenerate a random ball but just change the x and y values incrementally so that a line should appear to be drawn across the screen.
+* Clear the screen by setting _background_ and draw a set of balls that are randomly generated in each frame
+
+h3. Simulation changes
+
+* Have a set of balls moving around
+* Animate a single ball so that it bounces off the sides of the frame.
+** If the ball's x and y would be within the radius of zero or the screen-size constant then add or subtract 180 from the heading (mod 360).
+* Make the balls bounce off one another
+
+h3. Creating a game
+
+h4. Seek and absorb
+
+Create a random set of balls, each ball has AI consisting of:
+
+* If there are any other balls remaining
+** Move so that:
+*** your distance to any balls larger than you is greater or equal to the current distance
+*** you are touching a smaller ball or the distance between you and a smaller ball is less than or equal to the current distance
+* If touching another ball that is smaller, remove it and increase your radius by the size of the removed ball
+
+h5. Bonus points
+
+Make a ball's velocity proportional to it's radius (size)
+
+h4. Predators
+
+Create two predator balls (in one colour) and 15 prey balls (in another).
+
+Predators have a velocity that is slightly greater than prey. All balls have the same radius.
+
+Predators have the following AI:
+
+* Move towards the nearest prey ball
+* If touching a prey ball, eat it (remove it)
+
+Prey have the following AI:
+
+* Move towards the nearest prey ball so that you distance to any predators is minimised
+* If touching another prey ball and there are no predators in 3 radiuses of distance, spawn a new prey ball adjacent to this prey ball
+
+h5. Bonus points
+
+* Once predators have eaten prey they just move randomly for ten impulses until they become hungry again.
+* Implement a flocking algorithm for the prey
