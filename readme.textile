@@ -69,3 +69,4 @@ h5. Bonus points
 
 * Once predators have eaten prey they just move randomly for ten impulses until they become hungry again.
 * Implement a flocking algorithm for the prey
+* Create super-predators that seek and eat predators
