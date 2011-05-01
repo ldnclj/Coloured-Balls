@@ -12,3 +12,4 @@
 		new-x (floor (* velocity (cos heading)))
 		new-y (floor (* velocity (sin heading)))]
 		(conj {:x (+ old-x new-x) :y (+ old-y new-y)} (dissoc item :x :y))))
+		
