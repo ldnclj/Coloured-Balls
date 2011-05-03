@@ -1,6 +1,7 @@
 (ns coloured-balls.core
   (:use [rosado.processing]
-        [rosado.processing.applet]))
+        [rosado.processing.applet])
+  (:gen-class))
 
 ;; here's a function which will be called by Processing's (PApplet)
 ;; draw method every frame. Place your code here. If you eval it
@@ -32,5 +33,6 @@
 (defapplet balls :title "Coloured balls"
   :setup setup :draw draw :size [400 400])
 
- (run balls)
+(defn -main [& args]
+ (run balls))
 
